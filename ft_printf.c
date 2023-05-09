@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:38 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:36:53 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:23:05 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	evaluate_fmt(const char *fmt, int i, va_list args)
 		return (ft_convert_hex(va_arg(args, unsigned int), fmt[i]));
 	else if (fmt[i] == 'p')
 		return (ft_convert_pointer(va_arg(args, unsigned long)));
-	else if (fmt[i] == '%')
+	else if(fmt[i] == '%')
 	{
 		ft_putchar_fd('%', 1);
-		return (1);
+		return(1);
 	}
 	return (0);
 }
@@ -58,6 +58,6 @@ int	ft_printf(const char *fmt, ...)
 		}
 		i++;
 	}
-	va_end (args);
+	va_end(args);
 	return (ret);
 }

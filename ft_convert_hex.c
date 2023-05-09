@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_convert_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 17:14:42 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:00:54 by lebarbos         ###   ########.fr       */
+/*   Created: 2023/05/09 17:27:24 by lebarbos          #+#    #+#             */
+/*   Updated: 2023/05/09 18:18:03 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countsize(int nbr)
+int	ft_convert_hex(unsigned int nbr, char c)
 {
-	int	size;
+	int	size_nbr;
 
-	size = 1;
-	if (nbr < 0)
-	{
-		size++;
-		nbr = -nbr;
-	}
-	while (nbr >= 10)
-	{
-		size++;
-		nbr = nbr / 10;
-	}
-	return (size);
+	size_nbr = ft_countsize(nbr);
+	ft_putstr_fd("0x", 1);
+	if (c == 'x')
+		ft_putnbr_base(nbr, "0123456789abcdef");
+	else if (c == 'X')
+		ft_putnbr_base(nbr, "0123456789ABCDEF");
+	return (size_nbr + 2);
 }

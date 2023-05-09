@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_ut.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:16:16 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/08 14:15:34 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:26:52 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,10 @@ RETURN VALUE: The string representing the integer. NULL if the allocation
 fails. 
 */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
-static int	ft_countsize(int nbr)
-{
-	int	size;
-
-	size = 1;
-	if (nbr < 0)
-	{
-		size++;
-		nbr = -nbr;
-	}
-	while (nbr >= 10)
-	{
-		size++;
-		nbr = nbr / 10;
-	}
-	return (size);
-}
-
-static void	ft_putnstr(int n, char *str, int size)
+void	ft_putnstr(int n, char *str, int size)
 {
 	int	check;
 
@@ -61,7 +43,7 @@ static void	ft_putnstr(int n, char *str, int size)
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_ut(int n)
 {
 	char	*str;
 	int		size;
@@ -73,5 +55,6 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	ft_putnstr(n, str, size);
+	ft_putstr_fd(str, 1);
 	return (str);
 }

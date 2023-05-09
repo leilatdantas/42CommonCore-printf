@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 17:14:42 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:00:54 by lebarbos         ###   ########.fr       */
+/*   Created: 2023/05/09 17:08:10 by lebarbos          #+#    #+#             */
+/*   Updated: 2023/05/09 17:17:53 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countsize(int nbr)
+int	size(char *b)
 {
-	int	size;
+	int	s;
 
-	size = 1;
-	if (nbr < 0)
+	s = 0;
+	while (b[s] != '\0')
+		s++;
+	return (s);
+}
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	int	base_len;
+
+	base_len = ft_strlen(base);
+	if (nbr >= base_len)
 	{
-		size++;
-		nbr = -nbr;
+		ft_putnbr_base(nbr / base_len, base);
+		nbr = nbr % base_len;
 	}
-	while (nbr >= 10)
-	{
-		size++;
-		nbr = nbr / 10;
-	}
-	return (size);
+	ft_putchar_fd(base[nbr], 1);
 }

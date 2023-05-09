@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_convert_integer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 11:16:54 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/08 11:21:49 by lebarbos         ###   ########.fr       */
+/*   Created: 2023/05/09 16:49:46 by lebarbos          #+#    #+#             */
+/*   Updated: 2023/05/09 18:18:10 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int main(void){
+int	ft_convert_integer(int nbr)
+{
+	char	*str;
 
-    for(int i = 0; i < 10; i++){
-        for(int j = 0; j < 10; j++){
-            printf("%d ", j);
-        }
-        printf("\n");
-    }
+	str = ft_itoa_ut(nbr);
+	return (ft_strlen(str));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_integer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:49:46 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:18:10 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:39:45 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 int	ft_convert_integer(int nbr)
 {
-	char	*str;
+	long int	n;
+	char		*str;
+	int			len;
 
-	str = ft_itoa_ut(nbr);
-	return (ft_strlen(str));
+	n = nbr;
+	str = ft_itoa_ut(n);
+	len = ft_strlen(str);
+	free(str);
+	return (len);
 }

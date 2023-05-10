@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:38 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:23:05 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:46:27 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include "ft_printf.h"
 
 int	evaluate_fmt(const char *fmt, int i, va_list args)
@@ -24,13 +23,13 @@ int	evaluate_fmt(const char *fmt, int i, va_list args)
 	else if (fmt[i] == 'u')
 		return (ft_convert_unsigned(va_arg(args, unsigned int)));
 	else if (ft_tolower(fmt[i]) == 'x')
-		return (ft_convert_hex(va_arg(args, unsigned int), fmt[i]));
+		return (ft_convert_hex(va_arg(args, int), fmt[i]));
 	else if (fmt[i] == 'p')
-		return (ft_convert_pointer(va_arg(args, unsigned long)));
-	else if(fmt[i] == '%')
+		return (ft_convert_pointer(va_arg(args, unsigned long long)));
+	else if (fmt[i] == '%')
 	{
-		ft_putchar_fd('%', 1);
-		return(1);
+		ft_putchar_fd ('%', 1);
+		return (1);
 	}
 	return (0);
 }

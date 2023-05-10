@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_ut.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:16:16 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:26:52 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:05:19 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ fails.
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	ft_putnstr(int n, char *str, int size)
+void	ft_putnstr(long int n, char *str, int size)
 {
 	int	check;
 
@@ -43,14 +43,12 @@ void	ft_putnstr(int n, char *str, int size)
 	}
 }
 
-char	*ft_itoa_ut(int n)
+char	*ft_itoa_ut(long int n)
 {
 	char	*str;
 	int		size;
 
 	size = ft_countsize(n);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);

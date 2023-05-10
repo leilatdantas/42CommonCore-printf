@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:27:24 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/09 18:18:03 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:00:45 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_convert_hex(unsigned int nbr, char c)
+int	ft_convert_hex(int nbr, char c)
 {
-	int	size_nbr;
+	int				size_nbr;
+	long long int	n;
 
-	size_nbr = ft_countsize(nbr);
-	ft_putstr_fd("0x", 1);
+	size_nbr = 0;
+	n = nbr;
+	if (n < 0)
+		n = 4294967296 + n;
 	if (c == 'x')
-		ft_putnbr_base(nbr, "0123456789abcdef");
+		ft_putnbr_base(n, "0123456789abcdef", &size_nbr);
 	else if (c == 'X')
-		ft_putnbr_base(nbr, "0123456789ABCDEF");
-	return (size_nbr + 2);
+		ft_putnbr_base(n, "0123456789ABCDEF", &size_nbr);
+	return (size_nbr);
 }

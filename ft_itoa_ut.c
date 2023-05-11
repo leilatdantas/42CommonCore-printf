@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:16:16 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/10 12:05:19 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:56:57 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ fails.
 */
 
 #include "ft_printf.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 void	ft_putnstr(long int n, char *str, int size)
 {

@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:21 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/11 12:48:13 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:02:52 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
-# include <stdlib.h>
 # include <stdarg.h>
-# include <unistd.h>
-# include <limits.h> 
-# include <ctype.h> 
 # include "libft/libft.h"
 
 int		ft_printf(const char *fmt, ...);

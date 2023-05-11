@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:27:24 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/10 13:00:45 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:47:57 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_convert_hex(int nbr, char c)
+int	ft_convert_hex(unsigned int nbr, char c)
 {
 	int				size_nbr;
 	long long int	n;

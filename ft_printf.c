@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:38 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/10 12:46:27 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:44:25 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	evaluate_fmt(const char *fmt, int i, va_list args)
 	else if (fmt[i] == 'u')
 		return (ft_convert_unsigned(va_arg(args, unsigned int)));
 	else if (ft_tolower(fmt[i]) == 'x')
-		return (ft_convert_hex(va_arg(args, int), fmt[i]));
+		return (ft_convert_hex(va_arg(args, unsigned int), fmt[i]));
 	else if (fmt[i] == 'p')
 		return (ft_convert_pointer(va_arg(args, unsigned long long)));
 	else if (fmt[i] == '%')
@@ -31,7 +31,7 @@ int	evaluate_fmt(const char *fmt, int i, va_list args)
 		ft_putchar_fd ('%', 1);
 		return (1);
 	}
-	return (0);
+	return (-1);
 }
 
 int	ft_printf(const char *fmt, ...)
@@ -39,15 +39,20 @@ int	ft_printf(const char *fmt, ...)
 	int		i;
 	int		ret;
 	va_list	args;
+	int		conv_result;
 
 	ret = 0;
 	i = 0;
+
 	va_start(args, fmt);
 	while (fmt[i])
 	{
 		if (fmt[i] == '%')
 		{
-			ret += evaluate_fmt(fmt, i + 1, args);
+			conv_result = evaluate_fmt(fmt, i + 1, args);
+			if (conv_result == -1)
+				return (-1);
+			ret += conv_result;
 			i++;
 		}
 		else

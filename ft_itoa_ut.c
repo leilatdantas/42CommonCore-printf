@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:16:16 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/11 16:56:57 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:31:35 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ char	*ft_itoa_ut(long int n)
 	if (!str)
 		return (NULL);
 	ft_putnstr(n, str, size);
-	ft_putstr_fd(str, 1);
 	return (str);
 }

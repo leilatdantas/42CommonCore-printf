@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:49:46 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/10 12:39:45 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:31:40 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_convert_integer(int nbr)
 
 	n = nbr;
 	str = ft_itoa_ut(n);
+	ft_putstr_fd(str, 1);
 	len = ft_strlen(str);
 	free(str);
 	return (len);

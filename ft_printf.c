@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:38 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/11 17:06:00 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/12 11:23:55 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_printf(const char *fmt, ...)
 	ret = 0;
 	i = 0;
 	va_start(args, fmt);
+	if (!fmt)
+		return (-1);
 	while (fmt[i])
 	{
 		if (fmt[i] == '%')
@@ -60,3 +62,38 @@ int	ft_printf(const char *fmt, ...)
 	va_end(args);
 	return (ret);
 }
+
+/*#include <limits.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	char			c;
+	char			*str;
+	int				integer;
+	unsigned int	uns_int;
+	unsigned int	hex;
+	void			*ptr;
+	int				x;
+	int				y;
+
+	c = 126;
+	str = "";
+	integer = INT_MAX;
+	uns_int = -1;
+	hex = INT_MAX;
+	ptr = &str;
+	ft_printf("\nft_printf:\n");
+	x = ft_printf("Char: %c\nString: %s\nInteger %%d: %d\nInteger %%i: \
+	%i\nUnsigned Integer: %u\nHexadecimal x: %x\nHexadecimal X: %X\nPointer: \
+	%p\n", c, str, integer, integer, uns_int, hex, hex, ptr);
+	ft_printf("\nReturn = %d\n", x);
+
+	printf("\nprintf:\n");
+	y = printf("Char: %c\nString: %s\nInteger %%d: %d\nInteger %%i: \
+	%i\nUnsigned Integer: %u\nHexadecimal x: %x\nHexadecimal X: %X\nPointer: \
+	%p\n", c, str, integer, integer, uns_int, hex, hex, ptr);
+	printf("\nReturn = %d\n", y);
+	return (0);
+}
+*/

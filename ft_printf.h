@@ -6,7 +6,7 @@
 /*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:21 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/11 17:02:52 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/12 09:21:39 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 int		ft_printf(const char *fmt, ...);
 
 // Conversions: 
-int		ft_convert_char(char c);
-size_t	ft_convert_string(char *str);
+int		ft_convert_char(int c);
+int		ft_convert_string(char *str);
 int		ft_convert_integer(int nbr);
 int		ft_convert_unsigned(unsigned int nbr);
 int		ft_convert_hex(unsigned int nbr, char c);

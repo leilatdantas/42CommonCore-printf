@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:38 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/12 11:23:55 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:39:57 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ int	main(void)
 	int				x;
 	int				y;
 
-	c = 126;
-	str = "";
+	c = '0';
+	str = "String Teste$%0";
 	integer = INT_MAX;
-	uns_int = -1;
-	hex = INT_MAX;
+	uns_int = -2147483646;
+	hex = 1;
 	ptr = &str;
 	ft_printf("\nft_printf:\n");
 	x = ft_printf("Char: %c\nString: %s\nInteger %%d: %d\nInteger %%i: \

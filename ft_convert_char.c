@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:45:08 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/12 11:20:48 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:56:02 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_convert_char(char c)
 {
-	ft_putchar_fd(c, 1);
+	write(1, &c, 1);
 	return (1);
 }

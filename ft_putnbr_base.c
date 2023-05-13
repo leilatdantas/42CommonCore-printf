@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:08:10 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/10 12:33:48 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:23:18 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

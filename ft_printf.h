@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:23:21 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/12 09:21:39 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:02:15 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int		ft_printf(const char *fmt, ...);
 
 // Conversions: 
-int		ft_convert_char(int c);
+int		ft_convert_char(char c);
 int		ft_convert_string(char *str);
 int		ft_convert_integer(int nbr);
 int		ft_convert_unsigned(unsigned int nbr);
@@ -29,6 +29,5 @@ int		ft_convert_pointer(unsigned long long address);
 // Utilitaries:
 char	*ft_itoa_ut(long int n);
 void	ft_putnbr_base(unsigned long long nbr, char *base, int *i);
-int		ft_countsize(long int nbr);
 
 #endif

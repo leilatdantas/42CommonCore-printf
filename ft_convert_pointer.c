@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebarbos <lebarbos@student.42porto.com     +#+  +:+       +#+        */
+/*   By: lebarbos <lebarbos@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:18:50 by lebarbos          #+#    #+#             */
-/*   Updated: 2023/05/11 15:49:29 by lebarbos         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:55:33 by lebarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_convert_pointer(unsigned long long address)
 {
-	int	i;
+	int	size;
 
-	i = 0;
+	size = 0;
 	if (address == 0)
 		return (write(1, "(nil)", 5));
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_base(address, "0123456789abcdef", &i);
-	return (i + 2);
+	ft_putnbr_base(address, "0123456789abcdef", &size);
+	return (size + 2);
 }
